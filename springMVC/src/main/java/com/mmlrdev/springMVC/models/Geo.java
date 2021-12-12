@@ -1,4 +1,4 @@
-package com.mmlrdev.springMVC.entities;
+package com.mmlrdev.springMVC.models;
 
 import lombok.Getter;
 import lombok.Setter;
