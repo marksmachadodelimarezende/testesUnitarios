@@ -1,0 +1,4 @@
+mock:
+  api:
+    schema: "https"
+    hostname: "jsonplaceholder.typicode.com"
