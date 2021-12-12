@@ -1,6 +1,6 @@
 package com.mmlrdev.springMVC.service;
 
-import com.mmlrdev.springMVC.entities.User;
+import com.mmlrdev.springMVC.models.User;
 
 import java.util.List;
 

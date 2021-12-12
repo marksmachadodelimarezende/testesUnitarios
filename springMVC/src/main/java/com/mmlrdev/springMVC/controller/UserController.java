@@ -1,6 +1,6 @@
 package com.mmlrdev.springMVC.controller;
 
-import com.mmlrdev.springMVC.entities.User;
+import com.mmlrdev.springMVC.models.User;
 import com.mmlrdev.springMVC.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

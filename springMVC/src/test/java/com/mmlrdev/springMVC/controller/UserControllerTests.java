@@ -1,6 +1,5 @@
 package com.mmlrdev.springMVC.controller;
 
-import com.mmlrdev.springMVC.entities.User;
 import com.mmlrdev.springMVC.service.UserService;
 import com.mmlrdev.springMVC.service.UserServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
@@ -16,6 +15,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.Collections;
 
+import static com.mmlrdev.springMVC.mocks.MocksObjects.getUserMock;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -61,13 +61,5 @@ public class UserControllerTests {
                 .andExpect(status().isNoContent())
         ;
     }
-
-    private User getUserMock() {
-        return User.builder()
-                .id(1L)
-                .name("Mock Obj Test")
-                .build();
-    }
-
 
 }
