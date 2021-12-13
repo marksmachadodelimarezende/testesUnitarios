@@ -14,7 +14,7 @@ import org.springframework.web.client.RestTemplate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Component
-@ConfigurationProperties("mock.api")
+@ConfigurationProperties(prefix = "mock.api")
 public class UserApiConfig {
     private String schema;
     private String hostname;
