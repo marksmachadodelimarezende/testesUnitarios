@@ -2,6 +2,7 @@ package com.mmlrdev.springMVC.controller;
 
 import com.mmlrdev.springMVC.service.UserService;
 import com.mmlrdev.springMVC.service.UserServiceImpl;
+import com.mmlrdev.springMVC.service.configs.UserApiConfig;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -12,6 +13,7 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Collections;
 
@@ -20,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@WebMvcTest({UserController.class, UserService.class})
+@WebMvcTest({UserController.class, UserService.class, RestTemplate.class, UserApiConfig.class})
 @AutoConfigureMockMvc
 public class UserControllerTests {
 
@@ -35,7 +37,7 @@ public class UserControllerTests {
     public void prepare() {
         service = Mockito.mock(UserServiceImpl.class);
         controller = new UserController(service);
-        mvc = MockMvcBuilders.standaloneSetup(controller).build(); //Necessário para setar
+        mvc = MockMvcBuilders.standaloneSetup(controller).build(); //Necessário para setar contexto restrito com mocks e não dependender de serviços externos.
     }
 
     @Test
